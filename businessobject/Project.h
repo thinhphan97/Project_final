@@ -1,5 +1,7 @@
-#ifndef project_business_Project_h_
-#define project_business_Project_h_
+// tuyenbach
+
+#ifndef projectfinal_businessobject_Project_h_
+#define projectfinal_businessobject_Project_h_
 #include <iostream>
 
 using namespace std;

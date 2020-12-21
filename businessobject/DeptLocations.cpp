@@ -1,3 +1,5 @@
+// tuyenbach
+
 #include "DeptLocations.h"
 
 // construction function default
@@ -10,3 +12,14 @@ DeptLocations::DeptLocations(int ID, int DNumber, string DLocation)
     this->DNumber = DNumber;
     this->DLocation = DLocation;
 };
+    // void setID(int id){
+    //     ID = id;
+    // };
+    // void setDnumber(int dnumber){
+    //     DNumber = dnumber;
+    // };
+    // void setdlocation(string dlocation){
+    //     DLocation = dlocation;
+    // }
+
+
