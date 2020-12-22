@@ -6,7 +6,6 @@
 #include <iostream>
 using namespace std;
 
-
 class DeptLocations
 {
     int ID;
@@ -19,10 +18,13 @@ public:
 
     // construction function parameters
     DeptLocations(int ID, int DNumber, string DLocation);
-    // void setID(int id);
-    // void setDnumber(int dnumber);
-    // void setdlocation(string dlocation);
 
+    // get DeptLocation ID
+    int GetId();
+    int GetDNumber();
+    string GetDLocation();
+
+    string ToString();
 };
 
 #endif

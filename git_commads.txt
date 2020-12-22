@@ -15,3 +15,4 @@ git push
 git rm -rf --cached
 
 g++ *.cpp -o main.bin
+g++ *.cpp */*.cpp -o main.bin
