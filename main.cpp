@@ -1,6 +1,7 @@
 
 #include "businessobject/DeptLocations.h"
 #include "dataaccess/DeptLocationsDB.h"
+#include "ui/DeptLocationsUI.h"
 #include "libs/json.hpp"
 
 #include <iostream>
@@ -14,11 +15,13 @@ using json = nlohmann::json;
 
 int main()
 {
-    DeptLocations d1(1, 1, "Houston");
-    DeptLocations d2(2, 4, "Stafford");
-    DeptLocations d3(3, 5, "Bellaire");
-    DeptLocations d4(4, 5, "Sugarland");
-    DeptLocations d5(5, 5, "Houston");
+    // DeptLocations d1(1, 1, "Houston");
+    // DeptLocations d2(2, 4, "Stafford");
+    // DeptLocations d3(3, 5, "Bellaire");
+    // DeptLocations d4(4, 5, "Sugarland");
+    // DeptLocations d5(5, 5, "Houston");
+
+
 
     DeptLocationsDB deptLocationsDB;
 
@@ -28,33 +31,31 @@ int main()
     deptLocationsDB.AddDeptLocation(d4);
     deptLocationsDB.AddDeptLocation(d5);
 
-    vector<DeptLocations> deptLocationsList = deptLocationsDB.GetData();
+    // vector<DeptLocations> deptLocationsList = deptLocationsDB.GetData();
 
-    for (DeptLocations d : deptLocationsList)
-    {
-        // cout << d.GetId() << ", ";
-        // cout << d.GetDNumber() << ", ";
-        // cout << d.GetDLocation() << endl;
-
-        cout << d.ToString() <<endl;
-        deptLocationsDB.ExportToFile("DeptLocation");
-    }
-
-    // for (int i = 0; i < deptLocationsDB.GetSize(); i++)
+    // for (DeptLocations d : deptLocationsList)
     // {
-    //      DeptLocations* d =  deptLocationsDB.GetPointer(i);
+    //     // cout << d.GetId() << ", ";
+    //     // cout << d.GetDNumber() << ", ";
+    //     // cout << d.GetDLocation() << endl;
 
-    //     if (d == nullptr)
-    //     {
-    //         cout << "can not get Employee" << endl;
-    //     }
-    //     else
-    //     {
-    //         cout << d->GetId() << endl;
-    //         cout << d->GetDNumber() << endl;
-    //         cout << d->GetDLocation() << endl;
-    //     }
+    //     cout << d.ToString() <<endl;
+    //     deptLocationsDB.ExportToFile("DeptLocation");
     // }
+
+    for (int i = 0; i < deptLocationsDB.GetSize(); i++)
+    {
+         DeptLocations* d =  deptLocationsDB.GetPointer(i);
+
+        if (d == nullptr)
+        {
+            cout << "can not get Employee" << endl;
+        }
+        else
+        {
+            deptLocationsDB.ExportToFile("DeptLocation");
+        }
+    }
 
 
     return 0;

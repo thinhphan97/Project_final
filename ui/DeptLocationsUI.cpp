@@ -17,5 +17,5 @@ DeptLocations EnterDeptLocation()
     cout << "Enter DeptLocation DLocation: ";
     cin >> DLocation;
 
-    DeptLocations DeptLocation(DeptLocationsID,DNumber, DLocation);
+    return DeptLocations(DeptLocationsID,DNumber, DLocation);
 }
