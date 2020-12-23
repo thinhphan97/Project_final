@@ -1,7 +1,16 @@
-#include <iostream>
+
 #include "businessobject/DeptLocations.h"
 #include "dataaccess/DeptLocationsDB.h"
+#include "libs/json.hpp"
+
+#include <iostream>
+#include "libs/json.hpp"
+#include <fstream>
+#include <stdio.h>
+#include <string.h>
+
 using namespace std;
+using json = nlohmann::json;
 
 int main()
 {
@@ -28,6 +37,7 @@ int main()
         // cout << d.GetDLocation() << endl;
 
         cout << d.ToString() <<endl;
+        deptLocationsDB.ExportToFile("DeptLocation");
     }
 
     // for (int i = 0; i < deptLocationsDB.GetSize(); i++)
@@ -44,8 +54,8 @@ int main()
     //         cout << d->GetDNumber() << endl;
     //         cout << d->GetDLocation() << endl;
     //     }
-    //     return 0;
     // }
+
 
     return 0;
 }

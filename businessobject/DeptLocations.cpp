@@ -2,21 +2,45 @@
 
 #include "DeptLocations.h"
 
-// construction function default
+/**
+ * @brief Function contruction no parameters.
+ * 
+ *Function contruction no parameters.
+ */
 DeptLocations::DeptLocations() {}
 
-// construction function parameters
-DeptLocations::DeptLocations(int ID, int DNumber, string DLocation)
+/**
+ * @brief Function contruction have parameters DeptLocationsID, DNumber, DLocation.
+ * 
+ *Function contruction have parameters.
+ */
+DeptLocations::DeptLocations(int DeptLocationsID, int DNumber, string DLocation)
 {
-    this->ID = ID;
+    this->DeptLocationsID = DeptLocationsID;
     this->DNumber = DNumber;
     this->DLocation = DLocation;
 }
 
+
+/**
+ * @brief Function get ID value in this object.
+ * 
+ * Function get ID value in this object.
+ * @return a int ID
+ */
+
 int DeptLocations::GetId()
 {
-    return ID;
+    return DeptLocationsID;
 }
+
+
+/**
+ * @brief Function get Dnumber value in this object.
+ * 
+ * Function get Dnumber value in this object.
+ * @return a int GetDNumber
+ */
 int DeptLocations::GetDNumber()
 {
     return DNumber;
@@ -27,9 +51,8 @@ int DeptLocations::GetDNumber()
  * 
  * Function get DLocation in this object.
  * @return a string DLocation
- * EX: DeptLocations d(1,1,"Houston") -> "{1, 1, Houston}"
+ * EX: "Houston"
  */
-
 string DeptLocations::GetDLocation()
 {
     return DLocation;
@@ -47,9 +70,26 @@ string DeptLocations::ToString()
 {
     string s;
     s += "{";
-    s += to_string(ID) + ", ";
+    s += to_string(DeptLocationsID) + ", ";
     s += to_string(DNumber) + ", ";
     s += DLocation;
     s += " }";
     return s;
 }
+
+
+/**
+ * @brief Function converts this object to json.
+ * 
+ * Function converts this object to json.
+ * @return a json object
+ * EX: DeptLocations d(1,1,"Houston") -> "{"DeptLocationsID":1,"DNumber": 1, "DLocation":Houston}"
+ */
+
+ json DeptLocations::ToJson(){
+json j;
+    j["DeptLocationsID"] = DeptLocationsID;
+    j["DNumber"] = DNumber;
+    j["DLocation"] = DLocation;
+    return j;
+ }

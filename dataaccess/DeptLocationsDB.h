@@ -4,9 +4,7 @@
 #define projectfinal_dataaccess_Dept_Locations_DB_h_
 
 #include "../businessobject/DeptLocations.h"
-#include <iostream>
 #include <vector>
-using namespace std;
 
 class DeptLocationsDB
 {
@@ -20,23 +18,33 @@ public:
     //get max id
     int GetMaxId();
 
-    /** 
- * @brief function write
- * 
- * //
- * @return 
- */
-    // add deptloacation
+    // DeptLocations GetDepLocation(int i)
+    // {
+    //     string s("index out of bound!");
+    //     if (i < 0)
+    //         throw s;
+    //     if (i >= _data.size())
+    //         throw s;
+    //     return _data[i];
+    // }
 
+    // add deptloacation
     int AddDeptLocation(DeptLocations);
 
     //get deptlocations
     DeptLocations *GetPointer(int i);
+
     //get data
     vector<DeptLocations> GetData();
 
-//get size
+    //get A DeptLocations by id
+    // DeptLocations GetDeptLocations(int id);
+
+    //get size
     int GetSize();
+
+    //export to file
+    int ExportToFile(string filename);
 };
 
 #endif

@@ -16,3 +16,7 @@ git rm -rf --cached
 
 g++ *.cpp -o main.bin
 g++ *.cpp */*.cpp -o main.bin
+
+
+g++ main.cpp businessobject/DeptLocations.cpp dataaccess/DeptLocationsDB.cpp -o main.exe
+
