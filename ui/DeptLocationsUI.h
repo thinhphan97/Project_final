@@ -4,12 +4,16 @@
 #define projectfinal_UI_Dept_Locations_UI_h_
 
 #include "../businessobject/DeptLocations.h"
-
-class DeptLocationsUI{
+#include "../dataaccess/DeptLocationsDB.h"
+#include <iostream>
+class DeptLocationsUI
+{
 public:
+    DeptLocationsDB deptLocationsDB = DeptLocationsDB("DeptLocation.data");
 
-    //enter DeptLocation from keyboard 
-    DeptLocations EnterDeptLocation();
+    //enter DeptLocation from keyboard
+    void EnterDeptLocation();
+    void SelectAllDeptLocation();
 };
 
 #endif

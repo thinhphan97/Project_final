@@ -4,7 +4,9 @@
 #define projectfinal_dataaccess_Dept_Locations_DB_h_
 
 #include "../businessobject/DeptLocations.h"
+#include "../libs/json.hpp"
 #include <vector>
+#include <fstream>
 
 class DeptLocationsDB
 {
@@ -14,6 +16,8 @@ class DeptLocationsDB
 public:
     //contructor
     DeptLocationsDB();
+
+    DeptLocationsDB(string filename);
 
     //get max id
     int GetMaxId();
@@ -45,6 +49,9 @@ public:
 
     //export to file
     int ExportToFile(string filename);
+
+
+    string ReadFile(string filename);
 };
 
 #endif
